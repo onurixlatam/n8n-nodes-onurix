@@ -23,8 +23,11 @@ export const smsOperations: INodeProperties[] = [
                 action: 'Send an SMS message',
                 routing: {
                     request: {
+                        headers:{
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
                         method: 'POST',
-                        url: '/sms/send',
+                        url: '/sms/send'
                     },
                 }
             },
