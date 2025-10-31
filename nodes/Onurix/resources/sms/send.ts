@@ -10,7 +10,7 @@ export const smsSendDescription: INodeProperties[] = [
         displayName: 'Phone Number',
         name: 'phoneNumber',
         type: 'string',
-        default: '573201234567',
+        default: '',
         required: true,
         description: 'Phone number to send the SMS to. Include country code, e.g., +1234567890',
         displayOptions: {
