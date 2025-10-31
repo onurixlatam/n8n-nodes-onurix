@@ -19,7 +19,7 @@ export const smsSendDescription: INodeProperties[] = [
         routing: {
             send: {
                 type: 'body',
-                property: 'phones',
+                property: 'phone',
             }
         }
     },
