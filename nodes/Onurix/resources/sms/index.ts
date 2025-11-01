@@ -18,7 +18,7 @@ export const smsOperations: INodeProperties[] = [
         options: [
             {
                 name: 'Send',
-                value: 'send',
+                value: 'send_sms',
                 description: 'Send SMS message',
                 action: 'Send an SMS message',
                 routing: {

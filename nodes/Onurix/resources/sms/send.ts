@@ -1,7 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 
 const showOnlyForSmsSend = {
-    operation: ['send'],
+    operation: ['send_sms'],
     resource: ['sms'],
 };
 
