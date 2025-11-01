@@ -31,7 +31,7 @@ export const callsOperations: INodeProperties[] = [
                 },
             },
         ],
-        default: 'makeCall',
+        default: 'send_call',
     },
     ...callsSendDescription,
 ];
