@@ -1,10 +1,11 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { smsSendDescription } from './send';
 import { smsSendTwoFactorCodeDescription } from './sendTwoFactorCode';
+import { smsSendGroupsDescription } from './sendGroups';
 
 const showOnlyForSms = {
     resource: ['sms'],
-};  
+};
 
 export const smsOperations: INodeProperties[] = [
     {
@@ -23,11 +24,26 @@ export const smsOperations: INodeProperties[] = [
                 action: 'Send an SMS message',
                 routing: {
                     request: {
-                        headers:{
+                        headers: {
                             'Content-Type': 'application/x-www-form-urlencoded',
                         },
                         method: 'POST',
                         url: '/sms/send'
+                    },
+                }
+            },
+            {
+                name: 'Send to Groups',
+                value: 'send_to_groups',
+                description: 'Send SMS message to groups',
+                action: 'Send an SMS message to groups',
+                routing: {
+                    request: {
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
+                        method: 'POST',
+                        url: '/sms/send',
                     },
                 }
             },
@@ -38,7 +54,7 @@ export const smsOperations: INodeProperties[] = [
                 action: 'Send a 2FA code via SMS',
                 routing: {
                     request: {
-                        headers:{
+                        headers: {
                             'Content-Type': 'application/x-www-form-urlencoded',
                         },
                         method: 'POST',
@@ -50,5 +66,6 @@ export const smsOperations: INodeProperties[] = [
         default: 'send',
     },
     ...smsSendDescription,
-    ...smsSendTwoFactorCodeDescription
+    ...smsSendTwoFactorCodeDescription,
+    ...smsSendGroupsDescription
 ];
