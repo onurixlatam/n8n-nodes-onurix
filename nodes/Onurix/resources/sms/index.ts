@@ -38,6 +38,9 @@ export const smsOperations: INodeProperties[] = [
                 action: 'Send a 2FA code via SMS',
                 routing: {
                     request: {
+                        headers:{
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                        },
                         method: 'POST',
                         url: '/sms/2fa/send',
                     },
