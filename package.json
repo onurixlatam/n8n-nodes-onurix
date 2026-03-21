@@ -8,12 +8,12 @@
     "n8n-community-node-package"
   ],
   "author": {
-    "name": "Jhoan Zambrano",
-    "email": "alejo.ax1306@gmail.com"
+    "name": "Onurix Team",
+    "email": "support@onurix.com"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jhoanzambrano/n8n-nodes-onurix.git"
+    "url": "https://github.com/onurixlatam/n8n-nodes-onurix"
   },
   "scripts": {
     "build": "n8n-node build",
