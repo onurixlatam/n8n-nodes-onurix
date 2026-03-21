@@ -10,6 +10,8 @@ export class OnurixApi implements ICredentialType {
 
 	displayName = 'Onurix API';
 
+	icon = 'file:onurix_logo.svg' as const;
+
 	// Link to your community node's README
 	documentationUrl = 'https://github.com/org/-onurix?tab=readme-ov-file#credentials';
 
