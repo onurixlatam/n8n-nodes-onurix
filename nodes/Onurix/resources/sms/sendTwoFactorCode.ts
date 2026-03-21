@@ -11,7 +11,7 @@ export const smsSendTwoFactorCodeDescription: INodeProperties[] = [
         type: 'string',
         default: '',
         required: true,
-        description: 'Phone number to send the 2FA code to. Include country code, e.g., +1234567890',
+        description: 'Phone number to send the 2FA code to. Include country code, e.g., +1234567890.',
         displayOptions: {
             show: showOnlyForSmsTwoFactorCode,
         },
