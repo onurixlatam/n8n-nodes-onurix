@@ -29,7 +29,7 @@ export const smsSendGroupsDescription: INodeProperties[] = [
         type: 'string',
         default: '',
         required: true,
-        description: 'ID de grupos separados por comas. Ej "1,2,3"',
+        description: 'Comma-separated group IDs, e.g., 1,2,3.',
         displayOptions: {
             show: showOnlyForSmsSendGroups,
         },

@@ -1,6 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { urlShortenDescription } from './shorten';
 import { urlStatisticsDescription } from './statistics';
+import { onurixErrorHandler } from '../shared';
 
 const showOnlyForUrl = {
 	resource: ['url'],
@@ -29,6 +30,7 @@ export const urlOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/url/short-statistic',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -44,6 +46,7 @@ export const urlOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/url/short',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 		],

@@ -1,6 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { generalBlockPhoneDescription } from './blockPhone';
 import { generalVerifyTwoFactorCodeDescription } from './verifyTwoFactorCode';
+import { onurixErrorHandler } from '../shared';
 
 const showOnlyForGeneral = {
 	resource: ['general'],
@@ -29,6 +30,7 @@ export const generalOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/block-phone',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -41,6 +43,7 @@ export const generalOperations: INodeProperties[] = [
 						method: 'GET',
 						url: '/balance',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -56,6 +59,7 @@ export const generalOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/2fa/verification-code',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 		],

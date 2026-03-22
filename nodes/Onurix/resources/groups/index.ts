@@ -3,6 +3,7 @@ import { groupsCreateDescription } from './create';
 import { groupsDeleteDescription } from './delete';
 import { groupsListDescription } from './list';
 import { groupsUpdateDescription } from './update';
+import { onurixErrorHandler } from '../shared';
 
 const showOnlyForGroups = {
 	resource: ['groups'],
@@ -31,6 +32,7 @@ export const groupsOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/group/create',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -43,6 +45,7 @@ export const groupsOperations: INodeProperties[] = [
 						method: 'DELETE',
 						url: '/group/delete',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -55,6 +58,7 @@ export const groupsOperations: INodeProperties[] = [
 						method: 'GET',
 						url: '/group/list',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -70,6 +74,7 @@ export const groupsOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/group/update',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 		],

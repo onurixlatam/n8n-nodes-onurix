@@ -1,5 +1,6 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { callsSendDescription } from './send';
+import { onurixErrorHandler } from '../shared';
 
 const showOnlyForCalls = {
     resource: ['calls'],
@@ -28,10 +29,11 @@ export const callsOperations: INodeProperties[] = [
                         method: 'POST',
                         url: '/calls/make',
                     },
+                    output: { postReceive: [onurixErrorHandler] },
                 },
             },
         ],
-        default: 'send_call',
+        default: 'makeCall',
     },
     ...callsSendDescription,
 ];

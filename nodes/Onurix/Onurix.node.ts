@@ -27,6 +27,7 @@ export class Onurix implements INodeType {
 		credentials: [{ name: 'onurixApi', required: true }],
 		requestDefaults: {
 			baseURL: 'https://www.onurix.com/api/v1',
+			ignoreHttpStatusErrors: true,
 			headers: {
 				Accept: 'application/json',
 				'Content-Type': 'application/json',

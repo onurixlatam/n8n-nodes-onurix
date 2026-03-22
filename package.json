@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-onurix",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "n8n community node for Onurix — send SMS, 2FA codes, and make voice calls via the Onurix API.",
   "license": "MIT",
   "homepage": "",

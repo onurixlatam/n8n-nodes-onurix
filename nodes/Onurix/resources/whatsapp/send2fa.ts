@@ -53,7 +53,7 @@ export const whatsappSend2faDescription: INodeProperties[] = [
 		routing: {
 			send: {
 				type: 'body',
-				property: 'templateId',
+				property: 'template-id',
 			},
 		},
 	},

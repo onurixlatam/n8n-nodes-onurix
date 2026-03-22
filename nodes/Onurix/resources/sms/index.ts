@@ -2,6 +2,7 @@ import type { INodeProperties } from 'n8n-workflow';
 import { smsSendDescription } from './send';
 import { smsSendTwoFactorCodeDescription } from './sendTwoFactorCode';
 import { smsSendGroupsDescription } from './sendGroups';
+import { onurixErrorHandler } from '../shared';
 
 const showOnlyForSms = {
     resource: ['sms'],
@@ -28,9 +29,10 @@ export const smsOperations: INodeProperties[] = [
                             'Content-Type': 'application/x-www-form-urlencoded',
                         },
                         method: 'POST',
-                        url: '/sms/send'
+                        url: '/sms/send',
                     },
-                }
+                    output: { postReceive: [onurixErrorHandler] },
+                },
             },
             {
                 name: 'Send to Groups',
@@ -45,7 +47,8 @@ export const smsOperations: INodeProperties[] = [
                         method: 'POST',
                         url: '/sms/send',
                     },
-                }
+                    output: { postReceive: [onurixErrorHandler] },
+                },
             },
             {
                 name: 'Send 2FA Code',
@@ -60,10 +63,11 @@ export const smsOperations: INodeProperties[] = [
                         method: 'POST',
                         url: '/sms/2fa/send',
                     },
-                }
+                    output: { postReceive: [onurixErrorHandler] },
+                },
             }
         ],
-        default: 'send',
+        default: 'send_sms',
     },
     ...smsSendDescription,
     ...smsSendTwoFactorCodeDescription,

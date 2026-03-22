@@ -2,6 +2,7 @@ import type { INodeProperties } from 'n8n-workflow';
 import { whatsappSendDescription } from './send';
 import { whatsappSendNoTemplateDescription } from './sendNoTemplate';
 import { whatsappSend2faDescription } from './send2fa';
+import { onurixErrorHandler, omitEmptyJsonFields } from '../shared';
 
 const showOnlyForWhatsapp = {
 	resource: ['whatsapp'],
@@ -30,6 +31,7 @@ export const whatsappOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/whatsapp/2fa/send',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -42,6 +44,8 @@ export const whatsappOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/whatsapp/send',
 					},
+					send: { preSend: [omitEmptyJsonFields] },
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -54,6 +58,7 @@ export const whatsappOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/whatsapp/send/no-template',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 		],

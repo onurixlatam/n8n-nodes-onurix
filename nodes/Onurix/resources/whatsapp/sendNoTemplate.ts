@@ -24,23 +24,6 @@ export const whatsappSendNoTemplateDescription: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'From Phone Meta ID',
-		name: 'fromPhoneMetaId',
-		type: 'string',
-		default: '',
-		required: true,
-		description: 'Meta ID of the sender phone number',
-		displayOptions: {
-			show: showOnlyForWhatsappSendNoTemplate,
-		},
-		routing: {
-			send: {
-				type: 'body',
-				property: 'from_phone_meta_id',
-			},
-		},
-	},
-	{
 		displayName: 'Destination Phone',
 		name: 'phone',
 		type: 'string',
@@ -78,6 +61,7 @@ export const whatsappSendNoTemplateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'message.type',
+				propertyInDotNotation: true,
 			},
 		},
 	},
@@ -103,6 +87,7 @@ export const whatsappSendNoTemplateDescription: INodeProperties[] = [
 			send: {
 				type: 'body',
 				property: 'message.value',
+				propertyInDotNotation: true,
 			},
 		},
 	},

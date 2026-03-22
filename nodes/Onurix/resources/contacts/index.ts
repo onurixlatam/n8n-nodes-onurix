@@ -6,6 +6,7 @@ import { contactsListDescription } from './list';
 import { contactsListByGroupDescription } from './listByGroup';
 import { contactsRemoveFromGroupDescription } from './removeFromGroup';
 import { contactsUpdateDescription } from './update';
+import { onurixErrorHandler } from '../shared';
 
 const showOnlyForContacts = {
 	resource: ['contacts'],
@@ -34,6 +35,7 @@ export const contactsOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/contacts/group/add',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -49,6 +51,7 @@ export const contactsOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/contacts/create',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -61,6 +64,7 @@ export const contactsOperations: INodeProperties[] = [
 						method: 'DELETE',
 						url: '/contacts/delete',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -73,6 +77,7 @@ export const contactsOperations: INodeProperties[] = [
 						method: 'GET',
 						url: '/contacts/list',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -85,6 +90,7 @@ export const contactsOperations: INodeProperties[] = [
 						method: 'GET',
 						url: '/group/contacts/list',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -97,6 +103,7 @@ export const contactsOperations: INodeProperties[] = [
 						method: 'DELETE',
 						url: '/contacts/group/remove',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 			{
@@ -112,6 +119,7 @@ export const contactsOperations: INodeProperties[] = [
 						method: 'POST',
 						url: '/contacts/update',
 					},
+					output: { postReceive: [onurixErrorHandler] },
 				},
 			},
 		],
